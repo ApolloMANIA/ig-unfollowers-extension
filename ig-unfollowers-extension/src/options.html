@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IG Unfollowers Options</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="options">
+      <h1>IG Unfollowers — Options</h1>
+      <div class="sub">Rate limits, snapshot backup, and audit log</div>
+
+      <div class="card">
+        <h2 style="margin-top: 0">Rate limits</h2>
+        <label>
+          Daily unfollow cap
+          <input id="dailyCap" type="number" min="1" max="200" />
+        </label>
+        <label>
+          Minimum delay between actions (seconds)
+          <input id="minDelaySec" type="number" min="5" max="600" />
+        </label>
+        <label>
+          Maximum delay between actions (seconds)
+          <input id="maxDelaySec" type="number" min="5" max="900" />
+        </label>
+        <label class="checkbox">
+          <input id="stopOnError" type="checkbox" />
+          Stop the queue when an unfollow fails
+        </label>
+        <div class="row">
+          <button id="saveSettings">Save settings</button>
+          <span id="settingsStatus" class="muted" style="align-self: center"></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top: 0">Snapshots</h2>
+        <div class="row">
+          <button id="exportData" class="secondary">Export JSON</button>
+          <button id="importData" class="secondary">Import JSON</button>
+          <input id="importFile" type="file" accept="application/json,.json" hidden />
+        </div>
+        <pre id="snapshotSummary" class="muted" style="white-space: pre-wrap; font-size: 12px"></pre>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top: 0">Audit log</h2>
+        <div class="row">
+          <button id="refreshLogs" class="secondary">Refresh</button>
+          <button id="clearLogs" class="danger">Clear logs</button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>When</th>
+              <th>Action</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody id="logsBody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

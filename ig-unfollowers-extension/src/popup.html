@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IG Unfollowers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="popup">
+      <h1>IG Unfollowers</h1>
+      <div class="sub">Local snapshots · rate-limited auto-unfollow</div>
+
+      <div class="card">
+        <div id="status" class="status info">Loading…</div>
+      </div>
+
+      <div class="card">
+        <div class="stats" id="stats"></div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top: 0">Scan</h2>
+        <div class="row">
+          <button id="scanFollowers">Scan followers</button>
+          <button id="scanFollowing">Scan following</button>
+          <button id="refresh" class="secondary">Refresh</button>
+        </div>
+        <div class="muted" style="font-size: 11px">
+          Tip: open your profile first. The extension can open the followers/following dialog if needed.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top: 0">Not following back</h2>
+        <div id="notFollowingBack" class="list"></div>
+        <div class="row" style="margin-top: 8px">
+          <button id="queueAll">Queue all not following back</button>
+          <button id="clearQueue" class="secondary">Clear queue</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top: 0">Unfollowed you (since last scan)</h2>
+        <div id="unfollowedYou" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top: 0">Auto-unfollow</h2>
+        <div class="muted" id="runnerMeta" style="font-size: 12px; margin-bottom: 8px"></div>
+        <div class="row">
+          <button id="startRunner">Start</button>
+          <button id="pauseRunner" class="secondary">Pause</button>
+          <button id="resumeRunner" class="secondary">Resume</button>
+          <button id="stopRunner" class="danger">Stop</button>
+        </div>
+        <div id="queueList" class="list" style="max-height: 120px; margin-top: 8px"></div>
+      </div>
+
+      <div class="footer-links">
+        <a href="options.html" target="_blank">Options &amp; logs</a>
+        <span class="muted">Keep Instagram tab open</span>
+      </div>
+    </div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
